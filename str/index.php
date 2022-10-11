@@ -1,3 +1,4 @@
+<script src=""
 <?php
 
 $str = ' Danylo top chel ';
