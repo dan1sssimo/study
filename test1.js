@@ -204,18 +204,152 @@ function multiplyNumeric(obj) {
 
 */
 
+/*let calculator = {
+    read: function () {
+        this.a = +prompt('a?', '');
+        this.b = +prompt('b?', '');
+    },
+    sum() {
+        return this.a + this.b;
+    },
+    mul() {
+        return this.a * this.b;
+    }
+};
+
+calculator.read();
+alert(calculator.sum());
+alert(calculator.mul());*/
 
 
+/*
+function Calculator() {
+    this.read = function () {
+        this.a = +prompt('a?', '0');
+        this.b = +prompt('b?', '0');
+    }
+    this.sum = function () {
+        return this.a + this.b;
+    }
+    this.mul = function () {
+        return this.a * this.b;
+    }
+}
+
+let calculator = new Calculator();
+calculator.read();
+
+alert("Sum=" + calculator.sum());
+alert("Mul=" + calculator.mul());
 
 
+*/
 
 
+/*
+function Accumulator(startingValue) {
+    this.value = startingValue;
+    this.read = function () {
+        this.value += +prompt('value?', this.value);
+    }
+
+}
 
 
+let accumulator = new Accumulator(1); // початкове значення 1
+
+accumulator.read(); // додає введене користувачем значення
+accumulator.read(); // додає введене користувачем значення
+
+alert(accumulator.value); // показує суму цих значень
+*/
 
 
+/*
+let sum = () => {
+    let firstNum = +prompt('1 число?', '0');
+    let secondNum = +prompt('2 число?', '0');
+    return firstNum + secondNum;
+};
+
+alert(sum());
+*/
+
+/*
+function random(min, max) {
+    return min + (Math.random() * (max-min))
+}
+
+console.log(random(1, 5));
+console.log(random(1, 5));
+console.log(random(1, 5));
+console.log(random(1, 5));
+console.log(random(1, 5));
+console.log(random(1, 5));
+console.log(random(1, 5));
+console.log(random(1, 5));
+console.log(random(1, 5));
+*/
 
 
+/*
+function randomInteger(min, max) {
+    return Math.floor(Math.random() * max + min)
+}
+
+console.log(randomInteger(1, 5)); // 1
+console.log(randomInteger(1, 5)); // 3
+console.log(randomInteger(1, 5));
+console.log(randomInteger(1, 5)); // 1
+console.log(randomInteger(1, 5)); // 3
+console.log(randomInteger(1, 5)); // 5
+console.log(randomInteger(1, 5)); // 1
+console.log(randomInteger(1, 5)); // 3
+console.log(randomInteger(1, 5)); // 5// 5
+*/
+
+
+/*
+function ucFirst(str) {
+    return str.toUpperCase()[0]+str.slice(1);
+}
+
+console.log(ucFirst("василь"))
+
+*/
+
+/*
+let checkSpam = str => {
+    str = str.toLowerCase();
+    return str.indexOf("viagra") !== -1 || str.indexOf("xxx") !== -1;
+}
+
+
+console.log(checkSpam('buy ViAgRA now'))
+console.log(checkSpam('free xxxxx'))
+console.log(checkSpam("innocent rabbit"))
+
+*/
+
+/*
+function truncate(str, maxLength) {
+    if (str.length > maxLength) {
+        return str.slice(0, maxLength - 1) + "…";
+    } else
+        return str
+}
+
+console.log(truncate("Що я хотів би розповісти на цю тему:", 20))
+
+console.log(truncate("Всім привіт!", 20))
+*/
+
+function extractCurrencyValue(str) {
+    return +str.slice(1)
+}
+
+
+alert(extractCurrencyValue('$120'));
 
 
 
