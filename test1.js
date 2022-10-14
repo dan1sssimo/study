@@ -344,48 +344,246 @@ console.log(truncate("Що я хотів би розповісти на цю т�
 console.log(truncate("Всім привіт!", 20))
 */
 
+/*
 function extractCurrencyValue(str) {
     return +str.slice(1)
 }
 
 
 alert(extractCurrencyValue('$120'));
+*/
 
 
+/*
+let styles = ['Jazz', 'Blues'];
+console.log(styles)
+styles.push('Rock-n-Roll');
+console.log(styles)
+let midElement = Math.floor((styles.length - 1) / 2);
+styles[midElement] = 'Classics';
+console.log(styles)
+console.log(styles.shift());
+styles.unshift('Rap', 'Reggae');
+console.log(styles)
+
+*/
+
+/*
+function sumInput() {
+
+    let numbers = [];
+    while (true) {
+        let value = prompt("Введіть, будь ласка, номер", 0);
+        if (value === "" || value === null || !isFinite(value))
+            break;
+        numbers.push(+value);
+    }
+    let sum = 0;
+    for (let number of numbers) {
+        sum += number;
+    }
+    return sum;
+}
+
+alert(sumInput());
+*/
+
+/*
+function getMaxSubSum(arr) {
+    let maxSum = 0; // якщо елементи відсутні - повертаємо 0
+
+    for (let i = 0; i < arr.length; i++) {
+        let sumFixedStart = 0;
+        for (let j = i; j < arr.length; j++) {
+            sumFixedStart += arr[j];
+            maxSum = Math.max(maxSum, sumFixedStart);
+        }
+    }
+
+    return maxSum;
+}
 
 
+console.log(getMaxSubSum([-1, 2, 3, -9]))
+getMaxSubSum([2, -1, 2, 3, -9])
+getMaxSubSum([-1, 2, 3, -9, 11])
+getMaxSubSum([-2, -1, 1, 2])
+getMaxSubSum([100, -9, 2, -3, 5])
+getMaxSubSum([1, 2, 3])
+*/
+
+/*
+function camelize(str) {
+    return str.split('-').map(
+        (word, index) => index == 0 ? word : word[0].toUpperCase() + word.slice(1)
+    ).join('');
+}
+
+console.log(camelize("background-color"))
+
+*/
 
 
+/*
+function filterRange(arr, a, b) {
+    return arr.filter(item => item >= a && b >= item
+    )
+}
+
+let arr = [5, 3, 8, 1];
+
+let filtered = filterRange(arr, 1, 4);
+
+console.log(filtered); // 3,1 (відфільтровані значення)
+
+console.log(arr); // 5,3,8,1 (не змінюється)
+
+*/
+
+/*function filterRangeInPlace(arr, a, b) {
+    for (let i = 0; i < arr.length; i++) {
+        let val = arr[i];
+        if (val < a || val > b) {
+            arr.splice(i, 1);
+            i--;
+        }
+    }
+    return arr
+}*/
+
+/*
+
+let arr = [5, 2, 1, -10, 8];
+
+arr.sort((a, b) => b-a)
+
+console.log(arr);
+
+*/
+
+/*
+function copySorted(arr) {
+    return arr.concat().sort()
+}
 
 
+let arr = ["HTML", "JavaScript", "CSS"];
+
+let sorted = copySorted(arr);
+
+console.log(sorted); // CSS, HTML, JavaScript
+console.log(arr); // HTML, JavaScript, CSS (без змін)
+*/
 
 
+/*function Calculator() {
+    this.methods = {
+        "-": (a, b) => a - b
+        ,
+        "+": (a, b) => a + b
+    }
+    this.calculate = (str) => {
+        let arr = str.split(' ')
+        let a = +arr[0]
+        let b = +arr[2]
+        let operation = arr[1]
+        if (!this.methods[operation] || isNaN(a) || isNaN(b)) {
+            return NaN;
+        }
+        return this.methods[operation](a, b)
+    }
+    this.addMethod = function (name, func) {
+        this.methods[name] = func;
+    };
+}
 
 
+let calc = new Calculator;
+calc.addMethod("*", (a, b) => a * b);
+calc.addMethod("/", (a, b) => a / b);
+console.log(calc.calculate("10 / 2")); // 10*/
 
 
+/*
+let ivan = {name: "Іван", age: 25};
+let petro = {name: "Петро", age: 30};
+let mariya = {name: "Марія", age: 28};
+
+let users = [ivan, petro, mariya];
+
+let names = users.map(item => item.name)
+
+console.log(names); // Іван, Петро, Марія
+*/
 
 
+/*
+let ivan = {name: "Іван", surname: "Іванко", id: 1};
+let petro = {name: "Петро", surname: "Петренко", id: 2};
+let mariya = {name: "Марія", surname: "Мрійко", id: 3};
+
+let users = [ivan, petro, mariya];
+
+let usersMapped = users.map(user => ({
+    fullName:  `${user.name} ${user.surname}`,
+    id: user.id
+}))
+
+/!*
+usersMapped = [
+  { fullName: "Іван Іванко", id: 1 },
+  { fullName: "Петро Петренко", id: 2 },
+  { fullName: "Марія Мрійко", id: 3 }
+]
+*!/
+console.log(usersMapped[0].id)
+console.log(usersMapped[0].fullName) // Іван Іванко
+
+*/
 
 
+/*
+function getAverageAge(arr) {
+    return arr.reduce((prev, user) =>prev+user.age,0)/arr.length
+}
 
 
+let john = {name: "John", age: 25};
+let pete = {name: "Pete", age: 30};
+let mary = {name: "Mary", age: 29};
+
+let arr = [john, pete, mary];
+
+console.log(getAverageAge(arr)); // (25 + 30 + 29) / 3 = 28
+
+*/
 
 
+/*
+function unique(arr) {
+    return new Set(arr)
+}
 
+let values = ["Hare", "Krishna", "Hare", "Krishna",
+    "Krishna", "Krishna", "Hare", "Hare", ":-O"
+];
 
+console.log(unique(values)); // Hare, Krishna, :-O
+*/
+function aclean(arr) {
+    let map = new Map();
 
+    for (let word of arr) {
+        let sorted = word.toLowerCase().split('').sort().join(''); // (*)
+        map.set(sorted, word);
+    }
 
+    return Array.from(map.values());
+}
 
+let arr = ["nap", "teachers", "cheaters", "PAN", "ear", "era", "hectares"];
 
-
-
-
-
-
-
-
-
+console.log(aclean(arr)); // "nap,teachers,ear" or "PAN,cheaters,era"
 
 
 
