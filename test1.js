@@ -570,6 +570,7 @@ let values = ["Hare", "Krishna", "Hare", "Krishna",
 
 console.log(unique(values)); // Hare, Krishna, :-O
 */
+/*
 function aclean(arr) {
     let map = new Map();
 
@@ -585,6 +586,144 @@ let arr = ["nap", "teachers", "cheaters", "PAN", "ear", "era", "hectares"];
 
 console.log(aclean(arr)); // "nap,teachers,ear" or "PAN,cheaters,era"
 
+*/
 
 
+/*
+let salaries = {
+    "Іван": 100,
+    "Петро": 300,
+    "Марія": 250
+};
+let result = 0;
+/!*let doublePrices = Object.fromEntries(
+    Object.entries(salaries).map(element =>[element[0],result+=element[1]])
+);*!/
 
+for(let salary of Object.values(salaries)){
+    result+=salary
+}
+console.log(result); // 8
+*/
+
+
+/*
+let tmp = 0;
+
+function count(obj) {
+    for (let object of Object.keys(obj)) {
+        tmp++;
+    }
+    return tmp
+}
+
+let user = {
+    name: 'Іван',
+    age: 30
+};
+
+console.log(count(user)); // 2*/
+
+
+/*
+let user = {name: "Іван", years: 30};
+let {name, years: age, isAdmin = false} = user
+// ваш код зліва:
+// ... = user
+
+console.log(name); // Іван
+console.log(age); // 30
+console.log(isAdmin); // false
+*/
+
+
+/*let salaries = {
+    "Іван": 100,
+    "Петро": 300,
+    "Марія": 250
+};
+console.log(topSalary(salaries))
+
+function topSalary(obj) {
+    let maxSalary = 0;
+    let maxName = null;
+    for (let [name, salary] of Object.entries(obj)) {
+        if (maxSalary < salary) {
+            maxSalary = salary;
+            maxName = name;
+        }
+    }
+    return maxName;
+}*/
+
+
+/*
+let date  = new Date(2012,1,20,3,12)
+console.log(date)*/
+
+
+/*
+let date = new Date(2012, 0, 3);  // 3 січня 2012
+console.log(getWeekDay(date))
+
+function getWeekDay(date) {
+    let days = ['НД', 'ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ'];
+    return days[date.getDay()]
+
+}*/
+/*
+let user = {
+    name: "Іван Іванов",
+    age: 35
+};
+let str = toStr(user)
+
+console.log(toJson(str))
+
+function toStr(obj) {
+    return JSON.stringify(obj);
+}
+
+function toJson(str) {
+    return JSON.parse(str)
+}*/
+
+
+/*
+let room = {
+    number: 23
+};
+
+let meetup = {
+    title: "Конференція",
+    occupiedBy: [{name: "Іван"}, {name: "Аліса"}],
+    place: room
+};
+
+// циклічне посилання
+room.occupiedBy = meetup;
+meetup.self = meetup;
+
+console.log(JSON.stringify(meetup, function replacer(key, value) {
+    return (key != "" && value == meetup) ? undefined : value;
+}));
+*/
+
+/* результат повинен бути:
+{
+  "title":"Конференція",
+  "occupiedBy":[{"name":"Іван"},{"name":"Аліса"}],
+  "place":{"number":23}
+}
+*/
+async function loadJSON(url) {
+    let response = await fetch(url);
+    if (response.status == 200) {
+        return await response.json();
+    }
+    throw new Error(response.status);
+}
+
+
+loadJSON('https://javascript.info/no-such-user.json')
+    .catch(console.log); // Error: 404
